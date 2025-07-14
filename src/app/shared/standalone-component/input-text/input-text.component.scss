@@ -1,0 +1,33 @@
+@use 'sass:math';
+@use '../../../../../public/layout/functions' as *;
+@use '../../../../../public/layout/mixins' as *;
+::ng-deep {
+    .p-inputtext {
+        width: 100%;
+        height: rem(44);
+        outline: none;
+        box-shadow: none;
+
+        &:focus,
+        &:hover {
+            // border-color: var(--primary-color);
+            &:focus,
+            &:hover {
+                
+                border: rem(2) solid var(--primary-color);
+            }
+        }
+
+        &.p-inputtext-sm {
+            font-size: rem(14);
+        }
+    }
+
+    .p-float-label {
+        .p-inputtext {
+            padding-inline: rem(17);
+            padding-block: rem(8);
+            font-size: 12px;
+        }
+    }
+}

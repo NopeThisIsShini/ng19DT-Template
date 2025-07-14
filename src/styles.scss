@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@use './tailwind.scss';
+@use '../public/layout/layout.scss';
+@import 'primeicons/primeicons.css';
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    border-radius: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: hsl(var(--primary-color) / 0.1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+

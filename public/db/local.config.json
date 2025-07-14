@@ -1,0 +1,15 @@
+{
+    "result": {
+        "preset": "Lara",
+        "primary": "lime",
+        "surface": "zinc",
+        "darkTheme": false,
+        "menuMode": "static",
+        "userId": "user123"
+    },
+    "targetUrl": "",
+    "success": true,
+    "error": null,
+    "unAuthorizedRequest": false,
+    "__abp": true
+}

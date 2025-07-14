@@ -1,0 +1,53 @@
+@use 'sass:math';
+@use '../../../../../public/layout/functions' as *;
+@use '../../../../../public/layout/mixins' as *;
+@use '../../../../../public/layout/variables/_var' as *;
+
+:host::ng-deep {
+  .p-float-label {
+    .custom-textarea-class {
+      font-size: 12px;
+      display: block;
+      width: 100%;
+      resize: none;
+      height: rem(74);
+      border-radius: rem(8);
+      padding-inline: rem(20);
+      padding-block: rem(8);
+      outline: none;
+      box-shadow: none;
+
+      & ~ label {
+        font-size: 12px;
+        top: rem(8);
+        left: rem(14);
+        height: fit-content;
+        background: hsl(var(--surface-ground));
+        padding: 0 rem(4);
+        border-radius: math.div($base-border-radius, 1);
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        width: fit-content;
+        max-width: calc(100% - rem(16));
+        line-height: 1.2;
+      }
+      &:focus,
+      &:hover {
+        border-color: hsl(var(--primary-color));
+      }
+
+      &:focus ~ label,
+      &.p-filled ~ label {
+        top: rem(-5);
+        font-size: rem(12);
+        color: hsl(var(--text-color));
+        margin-block: 0;
+      }
+    }
+  }
+}
+.red {
+  color: hsl(var(--text-danger-color)) !important;
+}

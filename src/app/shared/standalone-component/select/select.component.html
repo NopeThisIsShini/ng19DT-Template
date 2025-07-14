@@ -1,0 +1,4 @@
+<p-floatLabel class="w-full">
+    <p-treeSelect containerStyleClass="w-full {{ containerClass }}" [options]="options" placeholder="{{ placeholder }}" (ngModelChange)="onSelectionChange($event)" />
+    <label for="treeselect" [ngClass]="labelClass"> {{ placeholder }} <span class="red">*</span> </label>
+</p-floatLabel>

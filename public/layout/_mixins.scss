@@ -1,0 +1,116 @@
+@use "./variables/_var" as *;
+@mixin focused() {
+    outline-width: var(--focus-ring-width);
+    outline-style: var(--focus-ring-style);
+    outline-color: var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+    box-shadow: var(--focus-ring-shadow);
+    transition:
+        box-shadow var(--transition-duration),
+        outline-color var(--transition-duration);
+}
+
+@mixin focused-inset() {
+    outline-offset: -1px;
+    box-shadow: inset var(--focus-ring-shadow);
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes InvertCircle {
+  0% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@mixin textGradient($clr) {
+  background: $clr;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Flexbox
+@mixin displayFlex($dir, $align, $justify) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin xsmlCircle($val, $b: inherit) {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: var(--primary);
+  border-radius: 100%;
+  left: $val;
+  bottom: $b;
+  @content;
+}
+
+@mixin sugRoundedCirc($w, $h) {
+  position: absolute;
+  content: "";
+  width: $w;
+  z-index: -1;
+  height: $w;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: $base-border-percent;
+  border: 1px solid #cb8df8;
+}
+
+@mixin position($p, $l, $r, $t, $b) {
+  position: $p;
+  left: $l;
+  right: $r;
+  top: $t;
+  bottom: $b;
+}
+@mixin abMidposition {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @content;
+}
+@mixin notAnimate {
+  animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
+  animation: InvertCircle 6s linear infinite;
+  @content;
+}
+@mixin bannerAnimateInverse {
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-name: InvertCircle;
+  animation-timing-function: linear;
+  // animation: InvertCircle 6s linear infinite;
+}
+@mixin bannerAnimate {
+  animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
+  animation: circle 6s linear infinite;
+  @content;
+}
+@mixin banneranimate {
+  border-radius: $base-border-percent;
+  border: $base-border-thickness * 3 dashed hsl(var(--borderColor3) / 0.6);
+  animation: circle 6s linear infinite;
+  animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
+}

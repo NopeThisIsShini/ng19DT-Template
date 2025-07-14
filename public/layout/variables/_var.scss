@@ -1,0 +1,15 @@
+// borders
+$base-border-thickness:1px;
+$base-border-radius:20px;
+$base-border-percent: 100%;
+
+// spacing
+$base-padding:0.75rem;
+$base-margin:0.75rem;
+
+// fontsizes
+$base-font-size: 1rem;
+$font-size-sm: $base-font-size * 0.75;
+$font-size-md: $base-font-size * 1.5;
+$font-size-lg: $base-font-size * 2;
+$font-size-xl: $base-font-size * 3;
